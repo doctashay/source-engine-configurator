@@ -5,7 +5,9 @@ This update refreshes the PowerPC engine configurator package and improves the b
 Changes in this update:
 - Adds a portable bundled curl-based HTTPS update check.
 - Adds a Software Update-style update prompt.
-- Adds selectable download sources for Macintosh Garden and GitHub.
+- Adds per-version remote update details.
+- Adds a default GitHub Releases download source for direct in-app DMG downloads.
+- Adds Macintosh Garden as an alternate public download page.
 - Keeps the configurator self-contained without requiring MacPorts on the target Mac.
 
-Macintosh Garden is the preferred download source for packaged PowerPC builds. GitHub is available for project information, source history, and release tracking.
+GitHub Releases is the default source for direct updater downloads. Macintosh Garden remains available as an alternate public download page.
