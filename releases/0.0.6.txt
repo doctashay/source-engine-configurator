@@ -1,17 +1,2 @@
-Source Engine Configurator 0.0.6 is available.
-
-This update refreshes the PowerPC engine configurator package and improves the built-in update check for Leopard systems.
-
-Changes in this update:
-- Adds a portable bundled curl-based HTTPS update check.
-- Adds a Software Update-style update prompt.
-- Adds per-version remote update details.
-- Adds a default GitHub Releases download source for direct in-app DMG downloads.
-- Shows native in-window download progress while fetching the DMG.
-- Installs launcher updates by mounting the downloaded DMG, replacing the app bundle, and relaunching the updated app.
-- Shows a Launcher update complete message after relaunch.
-- Prompts to update installed game apps after a launcher update.
-- Adds Macintosh Garden as an alternate public download page.
-- Keeps the configurator self-contained without requiring MacPorts on the target Mac.
-
-GitHub Releases is the default source for direct updater downloads. Macintosh Garden remains available as an alternate public download page.
+Adds automatic launcher updates and improved installed-game update handling.
+Includes UI polish, native menu additions, configuration improvements, and updated credits.
