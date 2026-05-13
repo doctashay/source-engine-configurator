@@ -1,6 +1,6 @@
   # Source Engine Configurator
 
-  ![Source Engine Configurator icon](source-configurator.png)
+  <img src="source-configurator.png" alt="Source Engine Configurator icon" width="128">
 
   Source Engine Configurator is a PowerPC Mac utility for creating native PowerPC builds of select Source Engine games from your own
   legally purchased game files.
