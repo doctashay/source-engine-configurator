@@ -4,11 +4,13 @@
 
   <img src="source-configurator-ui.png" alt="Source Engine Configurator application UI" width="480">
 
-  Source Engine Configurator is a PowerPC Mac utility for creating native PowerPC builds of select Source Engine games from your own
-  legally purchased game files.
+  Source Engine Configurator is a tool for installing and playing Source Engine games on your PowerPC Mac. It works by patching your existing Windows/Mac/Linux game installation folder into a PowerPC-compatible `.app` bundle. 
+  
+  Currently, 13 games and 1 Source mod are supported.
 
-  It bundles a PowerPC-compatible Source Engine runtime with supported Source game installs, producing standalone `.app` bundles
-  that can run on PowerPC Macs without virtualization or emulation.
+  Each game needs to be installed by providing your own legally purchased copy. You can do this by selecting an existing folder copied from another device, or by using the Steam download feature.
+
+  An Ethernet connection is highly recommended for Steam downloads. Secure Steam connections are handled through the `libsteamdepot` library: https://github.com/doctashay/libsteamdepot
 
   This project is currently an early alpha. Expect bugs, crashes, rendering issues, performance problems, missing effects, audio
   glitches, and game-specific compatibility issues.
@@ -18,16 +20,17 @@
   - PowerPC G4 or G5 Mac
   - 1.2 GHz or faster CPU recommended
   - 512 MB RAM minimum
-  - OpenGL 2.0 capable GPU
-  - Mac OS X 10.5.4 or newer
+  - Mac OS X 10.5.0 or newer
   - Also tested with the PowerPC Snow Leopard alpha
   - Dual-processor G5 strongly recommended
 
   ## Supported Games
 
-  The configurator currently targets early Source Engine titles, including:
+  Configurator supports many Source engine titles, including:
 
   - Portal
+  - Portal 2
+  - Team Fortress 2
   - Half-Life: Source
   - Half-Life Deathmatch: Source
   - Half-Life 2
@@ -36,7 +39,8 @@
   - Half-Life 2: Deathmatch
   - Counter-Strike: Source
   - Day of Defeat: Source
-
+  - Left 4 Dead 2
+  - The Stanley Parable 
   Some supported titles may still be incomplete or unstable.
 
   ## Not Supported
@@ -44,42 +48,33 @@
   The following games are not currently supported:
 
   - Left 4 Dead
-  - Left 4 Dead 2
-  - Portal 2
-  - Team Fortress 2
   - Counter-Strike: Global Offensive
   - Dota 2
   - Garry's Mod
 
   ## How It Works
 
-  Source Engine Configurator only provides the engine runtime and compatibility tooling. It does not include game assets or source code.
+  Source Engine Configurator only provides the engine runtime and launcher tooling. It does not include game assets or source code.
 
-  You provide a legitimate Windows, Linux, or Mac install folder for a supported Source game. The configurator verifies the install,
+  The engine port is a private fork of https://github.com/nillerusr/source-engine. 
+
+  You provide a legitimate Windows, Linux, or Mac install folder for a supported Source game. Configurator verifies the install,
   copies the required game files, applies the PowerPC engine runtime, and creates a standalone Mac `.app`.
 
-  The generated app can then be configured, updated, and launched directly from the configurator.
-
+  The generated app can then be configured, updated, and launched directly from Configurator.
+  
   ## Installation
 
-  1. Copy your supported Source game folder to your PowerPC Mac.
-  2. Open Source Engine Configurator.
-  3. Select the game you want to install.
-  4. Choose the source game folder.
-  5. Choose an output destination.
-  6. Configure video and performance options.
-  7. Create and launch the generated `.app`.
-
-  ## Graphics Profiles
-
-  The configurator includes hardware-specific rendering profiles for PowerPC Macs.
-
-  Profiles are set automatically depending on your GPU vendor. These profiles control Source Engine console variables used for rendering, presentation, model rendering, lighting, and
-  performance tuning.
+  1. Select the game you want to install. Then, choose your install method.
+  2a. Copy your supported Source game folder to your PowerPC Mac. OR
+  2b. Login and download via Steam.
+  3. Choose an output destination.
+  4. Confirm settings and download/patch.
+  5. Configure the game settings to your liking and launch.
 
   ## Updates
 
-  Source Engine Configurator automatically manages updates to the Source Engine PPC runtime - you will be notified when a game update is available. 
+  Source Engine Configurator automatically manages updates to the Source Engine PowerPC runtime - you will be notified when a game update is available. 
   These releases replace only changed engine binaries and support files without requiring the user to reinstall the original
   game data. This allows existing generated `.app` bundles to be patched as the PowerPC port improves.
 
@@ -116,11 +111,6 @@
   - Network compatibility with PC servers where possible
   - Source SDK tooling experiments
   - Expanded game compatibility
-
-  ## Known Issues 
-  - Issues with depth testing and clip planes on ATI GPUs (causes low performance and seeing through walls)
-  - HW skinning is disabled and slower SW skinning is used as a fallback (causes severe performance issues, `r_drawentities 0` in console will increase performance)
-  - NPC bone positions are very wrong (causes distorted animations and bad transition graph data)
 
 
   ## Credits
